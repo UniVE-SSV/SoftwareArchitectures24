@@ -243,8 +243,8 @@ And run a container from it. Then, open the container's terminal and print out t
 ## Exercises
 1. Create a **Dockerfile** that prints "installing!" when it is installed and prints "running!" each time it is launched.  
 <div>
-Previous: <a href="/SoftwareArchitecture/docker/getting-started">Docker - Getting Started</a>
+Previous: <a href="/SoftwareArchitectures24/docker/getting-started">Docker - Getting Started</a>
 </div>
 <div>
-Next: <a href="/SoftwareArchitecture/docker/volumes">Docker - Volumes</a>  
+Next: <a href="/SoftwareArchitectures24/docker/volumes">Docker - Volumes</a>  
 </div>

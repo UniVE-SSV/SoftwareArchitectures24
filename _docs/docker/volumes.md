@@ -48,5 +48,5 @@ aa68638a2fa01e8f499a916f5f8bd2f0d59c25c73ef3ebaeeb9354c8e5a50490
 {% endhighlight %}
 The -v flag permits to specify the volume: the string "todolist-db:/etc/todos simple-node-app" means that the todolist-db volume is mounted in /etc/todos, so all the content that the application generates inside the /etc/todos folder will be stored inside the container. Try to do some tests: add some entries in the todo list, then destroy and recreate the container. You should note the persistence of the information. Try also to launch multiple containers with different binding ports and see with your eyes.
 <div>
-Previous: <a href="/SoftwareArchitecture/docker/cli-and-dockerfile">Docker - CLI and Dockerfile</a>
+Previous: <a href="/SoftwareArchitectures24/docker/cli-and-dockerfile">Docker - CLI and Dockerfile</a>
 </div>
