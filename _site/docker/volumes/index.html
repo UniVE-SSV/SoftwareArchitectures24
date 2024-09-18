@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Volumes | Software Architectures</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Volumes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Contents A Glimpse of our Node Application A Glimpse of our Node Application In the previous section, we saw how to create a Dockerfile and we deployed our first application inside a container: If you go to the web app, you should see something like this:" />
+<meta property="og:description" content="Contents A Glimpse of our Node Application A Glimpse of our Node Application In the previous section, we saw how to create a Dockerfile and we deployed our first application inside a container: If you go to the web app, you should see something like this:" />
+<link rel="canonical" href="http://localhost:4000/docker/volumes/" />
+<meta property="og:url" content="http://localhost:4000/docker/volumes/" />
+<meta property="og:site_name" content="Software Architectures" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-09-18T10:26:39+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Volumes" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","dateModified":"2024-09-18T10:26:39+00:00","datePublished":"2024-09-18T10:26:39+00:00","description":"Contents A Glimpse of our Node Application A Glimpse of our Node Application In the previous section, we saw how to create a Dockerfile and we deployed our first application inside a container: If you go to the web app, you should see something like this:","headline":"Volumes","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/siteicon.png"}},"url":"http://localhost:4000/docker/volumes/"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Software Architectures" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700|Roboto:ital,wght@0,100;1,100&display=swap">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		<!-- -->
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="Software Architectures logo"></a>
+				Software Architectures
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav >
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Home</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level current">
+							
+							<a href="/docker/introduction/">1. Docker</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/docker/introduction/">1. Introduction</a></li>
+								
+									<li class="nav-item "><a href="/docker/getting-started/">2. Getting Started</a></li>
+								
+									<li class="nav-item "><a href="/docker/cli-and-dockerfile/">3. CLI and Dockerfile</a></li>
+								
+									<li class="nav-item current"><a href="/docker/volumes/">4. Volumes</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/changelog/"></a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>1. Docker</h2>
+				<h3>4. Volumes</h3>
+			</div>
+			<article class="content">
+				<h2>Contents</h2>
+<ul id="markdown-toc">
+  <li><a href="#a-glimpse-of-our-node-application" id="markdown-toc-a-glimpse-of-our-node-application">A Glimpse of our Node Application</a>    <ul>
+      <li><a href="#updating-the-app" id="markdown-toc-updating-the-app">Updating the App</a></li>
+      <li><a href="#where-are-my-data" id="markdown-toc-where-are-my-data">Where are my data?</a></li>
+    </ul>
+  </li>
+  <li><a href="#docker-volumes" id="markdown-toc-docker-volumes">Docker Volumes</a></li>
+</ul>
+<h2 id="a-glimpse-of-our-node-application">A Glimpse of our Node Application</h2>
+<p>In the previous section, we saw how to create a Dockerfile and we deployed our first application inside a container:
+If you go to the web app, you should see something like this:</p>
+
+<p>This demo application is a simple to-do list. Let’s try to add something:
+<img src="/images/docker_volumes_1.png" alt="Docker images" />
+As you can notice, the inserted data seems persistent (spoiler: they are not): try to refresh the page, or to restart the container. The items that we inserted remain. Let’s see how it’s done by looking at the source code of the application. Even if we don’t know how nodeJS works (it is not part of the course), we can see that underlying the application there is a database (src/persistence folder), and looking at the src/persistence/index.js file we know that, since we didn’t have set an environment variable MYSQL_HOST we are using SQLite. SQLite stores data in /etc/todos/todo.db (line 3 of sqlite.js):
+<img src="/images/docker_volumes_2.png" alt="Docker images" />
+We can prove it just by inspecting the todo.db file:
+<img src="/images/docker_volumes_3.png" alt="Docker images" /></p>
+
+<h3 id="updating-the-app">Updating the App</h3>
+
+<p>Now, suppose that you need to update the application (follow the “Updating our app” section of the getting-started application, note that we changed the name of the image in simple-node-app):
+<img src="/images/docker_volumes_4.png" alt="Docker images" />
+This requires to rebuild the image and to create a new container. As you can imagine, our data is gone (Why?).</p>
+
+<h3 id="where-are-my-data">Where are my data?</h3>
+<p>Our data is gone because it lives inside a container, and updating an app requires building a new container. This is not optimal: suppose that our app is widely used around the world and therefore
+we have multiple servers (and multiple containers) that host the application for load-balancing purposes. We want the data to persist among containers and among different updates. What we can do?</p>
+<h2 id="docker-volumes">Docker Volumes</h2>
+<p>To ensure the persistence of data, volumes come to our help.<br />
+A volume is a way of mounting directories/files from our host machine to the docker container. We can create a volume with the next command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker volume create &lt;name&gt;</code></pre></figure>
+
+<p>Where <em>&lt;name&gt;</em> is the name of the volume. So let’s create a volume for our application:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">~/Projects/sw-arch/docker/getting-started docker volume create todolist-db      
+todolist-db
+~/Projects/sw-arch/docker/getting-started </code></pre></figure>
+
+<p>You should see the volume inside Docker Desktop:
+<img src="/images/docker_volumes_5.png" alt="Docker images" />
+Now we want to our app use this volume. In order to do so, destroy the container and create it by launching the next command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">~/Projects/sw-arch/docker/getting-started docker run <span class="nt">-d</span> <span class="nt">-p</span> 3200:3000 <span class="nt">-v</span> todolist-db:/etc/todos simple-node-app
+aa68638a2fa01e8f499a916f5f8bd2f0d59c25c73ef3ebaeeb9354c8e5a50490
+~/Projects/sw-arch/docker/getting-started </code></pre></figure>
+
+<p>The -v flag permits to specify the volume: the string “todolist-db:/etc/todos simple-node-app” means that the todolist-db volume is mounted in /etc/todos, so all the content that the application generates inside the /etc/todos folder will be stored inside the container. Try to do some tests: add some entries in the todo list, then destroy and recreate the container. You should note the persistence of the information. Try also to launch multiple containers with different binding ports and see with your eyes.</p>
+<div>
+Previous: <a href="/SoftwareArchitecture/docker/cli-and-dockerfile">Docker - CLI and Dockerfile</a>
+</div>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
