@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Introduction | Software Architectures</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Introduction" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Contents What is Gradle What is Gradle Gradle is an open-source build automation tool, that is, a tool that permits developers to automatize tasks like, for example, test execution, code compiling, deployment, and generation of documentation. It is the most popular build system for the Java Virtual Machine (JVM) and the default for Android. The peculiarity of Gradle is that it provides its own high-level and declarative build language that permits writing build logic with ease. In this course, we will focus only on the compilation part of Gradle for Java applications." />
+<meta property="og:description" content="Contents What is Gradle What is Gradle Gradle is an open-source build automation tool, that is, a tool that permits developers to automatize tasks like, for example, test execution, code compiling, deployment, and generation of documentation. It is the most popular build system for the Java Virtual Machine (JVM) and the default for Android. The peculiarity of Gradle is that it provides its own high-level and declarative build language that permits writing build logic with ease. In this course, we will focus only on the compilation part of Gradle for Java applications." />
+<link rel="canonical" href="http://localhost:4000/gradle/introduction/" />
+<meta property="og:url" content="http://localhost:4000/gradle/introduction/" />
+<meta property="og:site_name" content="Software Architectures" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-09-24T10:25:55+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Introduction" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","dateModified":"2024-09-24T10:25:55+00:00","datePublished":"2024-09-24T10:25:55+00:00","description":"Contents What is Gradle What is Gradle Gradle is an open-source build automation tool, that is, a tool that permits developers to automatize tasks like, for example, test execution, code compiling, deployment, and generation of documentation. It is the most popular build system for the Java Virtual Machine (JVM) and the default for Android. The peculiarity of Gradle is that it provides its own high-level and declarative build language that permits writing build logic with ease. In this course, we will focus only on the compilation part of Gradle for Java applications.","headline":"Introduction","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/siteicon.png"}},"url":"http://localhost:4000/gradle/introduction/"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Software Architectures" />
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic|Open+Sans:400,400italic,600,600italic,700,700italic|Inconsolata:400,700|Roboto:ital,wght@0,100;1,100&display=swap">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/touch-icon.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+
+		<!-- -->
+	</head>
+
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/emblem.svg" width="40" height="40" alt="Software Architectures logo"></a>
+				Software Architectures
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search" autofocus>
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<nav >
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/">Home</a>
+					</li>
+				</ul>
+
+				<ul>
+					
+					
+						<li class="nav-item top-level current">
+							
+							<a href="/gradle/introduction/">02. Gradle</a>
+							<ul>
+								
+									<li class="nav-item current"><a href="/gradle/introduction/">1. Introduction</a></li>
+								
+									<li class="nav-item "><a href="/gradle/build.gradle/">2. build.gradle</a></li>
+								
+									<li class="nav-item "><a href="/gradle/testing-java-applications/">3. Testing Java Applications</a></li>
+								
+									<li class="nav-item "><a href="/gradle/example-log4j/">4. Example - log4j</a></li>
+								
+							</ul>
+						</li>
+					
+						<li class="nav-item top-level ">
+							
+							<a href="/docker/introduction/">1. Docker</a>
+							<ul>
+								
+									<li class="nav-item "><a href="/docker/introduction/">1. Introduction</a></li>
+								
+									<li class="nav-item "><a href="/docker/getting-started/">2. Getting Started</a></li>
+								
+									<li class="nav-item "><a href="/docker/cli-and-dockerfile/">3. CLI and Dockerfile</a></li>
+								
+									<li class="nav-item "><a href="/docker/volumes/">4. Volumes</a></li>
+								
+							</ul>
+						</li>
+					
+				</ul>
+
+				<ul>
+					<li class="nav-item top-level ">
+						
+						<a href="/changelog/"></a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="main">
+			<div class="page-header">
+				<h2>02. Gradle</h2>
+				<h3>1. Introduction</h3>
+			</div>
+			<article class="content">
+				<p><img src="/images/gradle_logo.png" alt="Gradle logo" /></p>
+<h2>Contents</h2>
+<ul id="markdown-toc">
+  <li><a href="#what-is-gradle" id="markdown-toc-what-is-gradle">What is Gradle</a></li>
+  <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
+  <li><a href="#gradle-in-action" id="markdown-toc-gradle-in-action">Gradle in Action</a>    <ul>
+      <li><a href="#command-line-gradle" id="markdown-toc-command-line-gradle">Command-Line Gradle</a></li>
+      <li><a href="#a-quick-note-about-dsl" id="markdown-toc-a-quick-note-about-dsl">A Quick Note About DSL</a></li>
+    </ul>
+  </li>
+</ul>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/JCCOMnGtjrY?si=63LBNhAWYYIS6fsJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<h2 id="what-is-gradle">What is Gradle</h2>
+<p>Gradle is an open-source build automation tool, that is, a tool that permits developers to automatize tasks like, for example, test execution, code compiling, deployment, and generation of documentation.
+It is the most popular build system for the Java Virtual Machine (JVM) and the default for Android.
+The peculiarity of Gradle is that it provides its own high-level and declarative build language that permits writing build logic with ease. In this course, we will focus only on the compilation part of Gradle for Java applications.</p>
+
+<h2 id="installation">Installation</h2>
+<p>You can install gradle in many different ways:</p>
+<ol>
+  <li>Installing <a target="_blank" rel="noopener noreferrer" href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a>: Gradle will be installed by default (<strong>Recommended</strong>).</li>
+  <li>Installing the &lt;a target=”_blank” rel=”noopener noreferrer” href=”https://code.visualstudio.com/docs/jav<a target="_blank" rel="noopener noreferrer" href="ild">Java Extension Pack</a> for <a target="_blank" rel="noopener noreferrer" href="https://code.visualstudio.com/">Visual Studio Code</a>.</li>
+  <li><a target="_blank" rel="noopener noreferrer" href="https://gradle.org/install/">Manual installation</a> (just follow the documentation).</li>
+</ol>
+
+<p>For this course, we will use Gradle with IntelliJ IDEA.</p>
+
+<p><strong>NOTE</strong>: Two versions of IntelliJ IDEA exist: Community Edition, which is free, and Ultimate, which is not. The Ultimate version has the support for Spring (that we will see in the next lessons). However, you can obtain a free Student License to use IntelliJ Ultimate (see <a target="_blank" rel="noopener noreferrer" href="https://www.jetbrains.com/community/education/#students">here</a>).</p>
+
+<h2 id="gradle-in-action">Gradle in Action</h2>
+<p>To see Gradle in action create a new Project with IntelliJ IDEA and choose Gradle as Build System. Set the other parameters as follows:
+<img src="/images/gradle_intro_1.png" alt="Gradle intro" />
+Now open the build.gradle.kts and replace all the content with the next snippet of code (we will explain why in the following sections):</p>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="nf">plugins</span> <span class="p">{</span>
+    <span class="nf">id</span><span class="p">(</span><span class="s">"application"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">group</span> <span class="p">=</span> <span class="s">"org.example"</span>
+<span class="n">version</span> <span class="p">=</span> <span class="s">"1.0-SNAPSHOT"</span>
+
+<span class="nf">repositories</span> <span class="p">{</span>
+    <span class="nf">mavenCentral</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="nf">dependencies</span> <span class="p">{</span>
+    <span class="nf">testImplementation</span><span class="p">(</span><span class="nf">platform</span><span class="p">(</span><span class="s">"org.junit:junit-bom:5.9.1"</span><span class="p">))</span>
+    <span class="nf">testImplementation</span><span class="p">(</span><span class="s">"org.junit.jupiter:junit-jupiter"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">application</span> <span class="p">{</span>
+    <span class="n">mainClass</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="s">"org.example.Main"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">tasks</span><span class="p">.</span><span class="nf">test</span> <span class="p">{</span>
+    <span class="nf">useJUnitPlatform</span><span class="p">()</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Then, click on the elephant icon highlighted by the arrow in the image below (or, if you don’t see it, just reopen the project). This action syncs the IntelliJ Gradle plugin with the changes we made.
+<img src="/images/gradle_intro_2.png" alt="Gradle intro" />
+Now open the Gradle view (the elephant on the left): here, you have a list of all the Gradle tasks that you can launch. A task is a piece of work that Gradle can do with a project. For example, the build task will perform all the steps necessary to get a full build of our Java application. Double-click on it.
+<img src="/images/gradle_intro_3.png" alt="Gradle intro" />
+This will open a run panel on the lower side of the IDE that shows what your action does. You should see something like this:</p>
+
+<figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="mi">20</span><span class="o">:</span><span class="mi">22</span><span class="o">:</span><span class="mi">13</span><span class="o">:</span> <span class="n">Executing</span> <span class="s1">'build'</span><span class="o">...</span>
+
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">compileJava</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">processResources</span> <span class="n">NO</span><span class="o">-</span><span class="n">SOURCE</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">classes</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">jar</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">startScripts</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">distTar</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">distZip</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">assemble</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">compileTestJava</span> <span class="n">NO</span><span class="o">-</span><span class="n">SOURCE</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">processTestResources</span> <span class="n">NO</span><span class="o">-</span><span class="n">SOURCE</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">testClasses</span> <span class="n">UP</span><span class="o">-</span><span class="n">TO</span><span class="o">-</span><span class="n">DATE</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">test</span> <span class="n">NO</span><span class="o">-</span><span class="n">SOURCE</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">check</span> <span class="n">UP</span><span class="o">-</span><span class="n">TO</span><span class="o">-</span><span class="n">DATE</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">build</span>
+
+<span class="n">BUILD</span> <span class="n">SUCCESSFUL</span> <span class="k">in</span> <span class="mi">328</span><span class="n">ms</span>
+<span class="mi">5</span> <span class="n">actionable</span> <span class="nl">tasks:</span> <span class="mi">5</span> <span class="n">executed</span>
+<span class="mi">20</span><span class="o">:</span><span class="mi">22</span><span class="o">:</span><span class="mi">14</span><span class="o">:</span> <span class="n">Execution</span> <span class="n">finished</span> <span class="s1">'build'</span><span class="o">.</span></code></pre></figure>
+
+<p>As you can notice, some tasks were called sequentially, and a new folder appeared in your project. If you navigate on it, you can see that it contains different subfolders: classes, distributions, generated, libs, and so on. On these folders you get your application in different “formats”: for example, you get it as a .jar library, as a set of .class files, or as archives (.zip and .tar) for distribution.<br />
+Now double-click on the <strong>run</strong> task, under the application folder:</p>
+
+<figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">10</span><span class="o">:</span> <span class="n">Executing</span> <span class="s1">'run'</span><span class="o">...</span>
+
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">compileJava</span> <span class="n">UP</span><span class="o">-</span><span class="n">TO</span><span class="o">-</span><span class="n">DATE</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">processResources</span> <span class="n">NO</span><span class="o">-</span><span class="n">SOURCE</span>
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">classes</span> <span class="n">UP</span><span class="o">-</span><span class="n">TO</span><span class="o">-</span><span class="n">DATE</span>
+
+<span class="o">&gt;</span> <span class="kt">Task</span> <span class="o">:</span><span class="n">run</span>
+<span class="n">Hello</span> <span class="n">and</span> <span class="n">welcome</span><span class="o">!</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">BUILD</span> <span class="n">SUCCESSFUL</span> <span class="k">in</span> <span class="mi">163</span><span class="n">ms</span>
+<span class="mi">2</span> <span class="n">actionable</span> <span class="nl">tasks:</span> <span class="mi">1</span> <span class="n">executed</span><span class="o">,</span> <span class="mi">1</span> <span class="n">up</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">date</span>
+<span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">11</span><span class="o">:</span> <span class="n">Execution</span> <span class="n">finished</span> <span class="s1">'run'</span><span class="o">.</span></code></pre></figure>
+
+<p>This action will perform all the necessary steps to run the application: as you can see, first it will call the compileJava task (that as the name suggests compile the Java application) and generate a .class file. In this case, we did not generate .jar, .zip, and .tar files, because we just wanted to run the application.</p>
+
+<h3 id="command-line-gradle">Command-Line Gradle</h3>
+<p>A keen eye might have noticed that on the root folder of our project, there are two script files: gradlew and gradlew.bat. These files are wrappers of gradle and permit launching tasks directly from the terminal. Just try to launch ./gradlew tasks (if you are on macOS / Linux) or gradlew.bat tasks (if you are on Windows). This command will list all the available tasks. You can launch tasks by ./gradlew &lt;task&gt; (or ./gradlew.bat &lt;task&gt;), replacing &lt;task&gt; with the task name. For example:<br />
+<img src="/images/gradle_intro_4.png" alt="Gradle intro" /></p>
+
+<h3 id="a-quick-note-about-dsl">A Quick Note About DSL</h3>
+<p>Maybe you noticed that during the creation of the project you could choose the Gradle DSL (Domain Specific Language). This goes to specifies the language that you want to use for your Gradle build file (more details on this file later). Kotlin is the preferred choice since it is more readable and offers better compile-time checks since Kotlin is statically typed. However, syntax differences are minimal, so you can choose whatever you prefer.</p>
+<div>
+Next: <a href="/SoftwareArchitectures24/gradle/build.gradle">Gradle - build.gradle</a>
+</div>
+
+			</article>
+		</section>
+
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
