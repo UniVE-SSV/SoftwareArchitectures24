@@ -1,6 +1,6 @@
 ---
 title: 1. Introduction 
-category: 1. Docker
+category: 01. Docker
 order: 1
 ---
 ![Docker logo]({{ site.baseurl }}/images/docker_logo.jpeg)

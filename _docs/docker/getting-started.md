@@ -1,6 +1,6 @@
 ---
 title: 2. Getting Started
-category: 1. Docker
+category: 01. Docker
 order: 2
 ---
 <h2>Contents</h2>

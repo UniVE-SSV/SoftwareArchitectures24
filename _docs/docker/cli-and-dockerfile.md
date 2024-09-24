@@ -1,6 +1,6 @@
 ---
 title: 3. CLI and Dockerfile
-category: 1. Docker
+category: 01. Docker
 order: 3
 ---
 <h2>Contents</h2>
