@@ -302,5 +302,5 @@ Let's add a new Student:
 We can also connect to our FTP Server using an FTP Client like, for example, <a target="_blank" rel="noopener noreferrer" href="https://filezilla-project.org/">FileZilla</a>:
 ![Camel Example 11]({{ site.baseurl }}/images/camel_example_11.png)
 <div>
-Previous: <a href="/SoftwareArchitecture/camel/introduction">Camel - Introduction</a> 
+Previous: <a href="/SoftwareArchitectures24/camel/introduction">Camel - Introduction</a> 
 </div>
