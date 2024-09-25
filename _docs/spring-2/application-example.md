@@ -6,13 +6,13 @@ order: 2
 <h2>Contents</h2>
 * toc
 {:toc}
-To have a better understanding of the concepts seen so far, let's see a simple example: we want to have a simple application that manages students. 
+Let's consider a simple example to better understand Spring concepts. We want to have a simple application that manages students. 
 ## Our Spring Application
-We start by creating a new Spring Project with the dependencies that we had seen in the previous lessons. Then, we need to define how to model Students. We want to provide a minimal example for now, so we can say that a Student must have:
+We start by creating a new Spring Project with the dependencies we saw in the previous lessons. Then, we need to define how to model Students. We want to provide a minimal example for now, so we can say that a Student must have:
 1. A Name.
 2. A Surname.
 3. A Matriculation ID.
-Let's create our Student class: we want to do things well, so we use the Model View Controller (MVC) pattern. We create a Student.java inside a models package:
+Let's create our Student class: we want to do things well using the Model View Controller (MVC) pattern. We create a Student.java inside a models package:
 {% highlight java %}
 public class Student {
     private String name;
@@ -51,7 +51,7 @@ public class Student {
     }
 }
 {% endhighlight %}
-Then, we need to create a Repository, that defines the logic for accessing Students: for now, we use a simple Java Map, but we can use a database or other external systems. The StudentRepository class is easy (package com.example.studentsapp.repositories)
+Then, we need to create a Repository that defines the logic for accessing Students: for now, we use a simple Java Map, but we can use a database or other external systems. The StudentRepository class is easy (package com.example.studentsapp.repositories)
 
 {% highlight java %}
 @Repository
@@ -87,8 +87,6 @@ public class StudentRepository {
         this.students.remove(id);
         return s;
     }
-
-
 }
 {% endhighlight %}
 Now it is time to add the Service class (package com.example.studentsapp.services):
@@ -119,8 +117,8 @@ public class StudentService {
     }
 }
 {% endhighlight %}
-Note the @Autowired annotation. This annotation permits Spring to inject the Student repository automatically inside our service.  
-One could argue that the service class does the same things as the repository, and so it is an unnecessary abstraction. This is actually true for our minimal example, but we need to keep in mind that inside Service we put all the business logic: for example, for complex applications, you might not want to return the raw values obtained from a repository (e.g., you want to apply some transformations or filtering). Services should act as an API (Application Programming Interface), while a Repository's job is to handle the access and manipulation of data in memory. What remains to do is to define our Student controller (package com.example.studentsapp.controllers):
+Note the @Autowired annotation. This annotation permits Spring to inject the Student repository automatically inside our Service.  
+One could argue that the service class does the same things as the repository, so it is an unnecessary abstraction. This is true for our minimal example, but we need to keep in mind that inside Service, we put all the business logic: for example, for complex applications, you might not want to return the raw values obtained from a repository (e.g., you want to apply some transformations or filtering). Services should act as an API (Application Programming Interface), while a Repository's job is to handle accessing and manipulating data in memory. What remains to do is to define our Student controller (package com.example.studentsapp.controllers):
 {% highlight java %}
 @RestController
 public class Student {
@@ -137,7 +135,7 @@ public class Student {
     }
 }
 {% endhighlight %}
-Note again the @Autowired annotation that permits us to "connect" our Service to this controller. Note also the @RequestParam annotation on the addStudent method: this annotation tells Spring to inject the parameters from the query string. If you are not familiar with query strings, don't worry: we will cover it in the next lessons. For now, let's say that the query string is a way to pass some parameters directly from the URL.  
+Again, note the @Autowired annotation that permits us to "connect" our Service to this controller. Note also the @RequestParam annotation on the addStudent method: this annotation tells Spring to inject the parameters from the query string. Don't worry if you are unfamiliar with query strings; we will cover them in the following lessons. Let's say that the query string is a way to pass some parameters directly from the URL.  
 Now start the application and go to <a target="_blank" rel="noopener noreferrer" href="localhost:8080/students">localhost:8080/students</a>. You should see something like this:  
 ![Spring intro]({{ site.baseurl }}/images/spring_example_1.png)
 We don't have any students yet, so our list is empty. We can try to add a new student: <a target="_blank" rel="noopener noreferrer" href="localhost:8080/students/add?name=Giacomo&surname=Zanatta&id=859156">localhost:8080/students/add?name=Giacomo&surname=Zanatta&id=859156</a>:  
@@ -151,7 +149,7 @@ We can add as many students as we want:
 Other operations (search, delete) are left as an exercise. Try to play around!
 
 ## Conclusions
-OK, this is wonderful. But we want to make our application more user-friendly, for example presenting a form to the final user that permits adding a student, and a more sophisticated view to show our students. We can do it by returning, for example, HTML instead of plain text, using a template engine like <a target="_blank" rel="noopener noreferrer" href="https://www.thymeleaf.org/">Thymeleaf</a>. In the next lessons, we will talk about the HTTP protocol and particularly about the REST architecture, showing how we can build a RESTful application in Spring.
+OK, this is wonderful. But we want to make our application more user-friendly, for example, presenting a form to the final user that permits adding a student and a more sophisticated view to show our students. We can do it by returning, for example, HTML instead of plain text, using a template engine like <a target="_blank" rel="noopener noreferrer" href="https://www.thymeleaf.org/">Thymeleaf</a>. In the following lessons, we will talk about the HTTP protocol and particularly about the REST architecture, showing how we can build a RESTful application in Spring.
 ## Exercises
 1. Implement the capability to search and delete users.  
 <div>
