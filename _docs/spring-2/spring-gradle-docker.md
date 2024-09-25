@@ -6,11 +6,11 @@ order: 3
 <h2>Contents</h2>
 * toc
 {:toc}
-Before going further, we want to connect all the things that seem so far and see how we can deploy a Spring application in a Docker component.
+Before proceeding, we want to connect all the dots that seem so far and see how we can deploy a Spring application as a Docker component.
 
 ## The Dockerfile
 Let's follow what the Spring Boot <a target="_blank" rel="noopener noreferrer" href="https://spring.io/guides/topicals/spring-boot-docker/">documentation</a> says. The idea is to copy and execute the .jar file produced by Gradle inside a Docker container.  
-Firstly we need to build the application:
+Firstly, we need to build the application:
 {% highlight bash %}
 ./gradlew build
 {% endhighlight %}
@@ -20,7 +20,7 @@ This command will generate the application's .jar files. Where? If you are using
 StudentsApp-0.0.1-SNAPSHOT-plain.jar StudentsApp-0.0.1-SNAPSHOT.jar
 ~/IdeaProjects/StudentsApp 
 {% endhighlight %}
-As you can see, we have two .jar files. We don't want the -plain.jar one. In order to tell Gradle to not produce this file, we should add this to our Gradle file:
+As you can see, we have two .jar files. We don't want the -plain.jar one. To tell Gradle not to produce this file, we should add this to our Gradle file:
 {% highlight kotlin %}
 tasks.getByName<Jar>("jar") {
     enabled = false
