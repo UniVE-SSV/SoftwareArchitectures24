@@ -122,7 +122,6 @@ public class StudentService {
 Note the @Autowired annotation. This annotation permits Spring to inject the Student repository automatically inside our service.  
 One could argue that the service class does the same things as the repository, and so it is an unnecessary abstraction. This is actually true for our minimal example, but we need to keep in mind that inside Service we put all the business logic: for example, for complex applications, you might not want to return the raw values obtained from a repository (e.g., you want to apply some transformations or filtering). Services should act as an API (Application Programming Interface), while a Repository's job is to handle the access and manipulation of data in memory. What remains to do is to define our Student controller (package com.example.studentsapp.controllers):
 {% highlight java %}
-@Service
 @RestController
 public class Student {
     @Autowired
@@ -156,8 +155,8 @@ OK, this is wonderful. But we want to make our application more user-friendly, f
 ## Exercises
 1. Implement the capability to search and delete users.  
 <div>
-Previous: <a href="/SoftwareArchitecture/spring/the-spring-framework">Java Spring - The Spring framework</a> 
+Previous: <a href="/SoftwareArchitectures24/spring-2/stereotypes">Spring Sterotypes</a> 
 </div>
 <div>
-Next: <a href="/SoftwareArchitecture/spring/spring-gradle-docker">Java Spring - Spring + Gradle + Docker</a>  
+Next: <a href="/SoftwareArchitectures24/spring-2/spring-gradle-docker">Java Spring - Spring + Gradle + Docker</a>  
 </div>
