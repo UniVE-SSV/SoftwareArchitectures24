@@ -12,10 +12,10 @@ order: 1
 <a target="_blank" rel="noopener noreferrer" href="https://spring.io/">Spring</a> is a free and open-source Java framework for building Java applications. It is mainly used for web-based apps. If you are not familiar with the concept of framework, it is important to define briefly what a framework is.
 
 ### What is a framework
-A framework, like a library, is a bunch of code packed together. The main difference is that offers a runtime execution environment. The idea of frameworks is that a developer specifies some components, and under the hood, the framework drives the execution. This concept is called Inversion of Control (IoC): the execution is not managed directly by developers but by the framework itself.  
+Like a library, a framework is a bunch of code packed together. The main difference is that offers a runtime execution environment. The idea of frameworks is that a developer specifies some components, and under the hood, the framework drives the execution. This concept is called Inversion of Control (IoC): the execution is not managed directly by developers but by the framework itself.  
 Usually, a Java framework like Spring consists of a runtime environment plus a library.  
 
-Do you remember JUnit? Well. Junit is a framework: you specify test methods, but **not** how to run them. You don't have to define a main function that calls the test methods. It is the framework's responsibility to manage how to run it (IoC). Let's recall the simple test that we wrote in one of the previous lessons:  
+Do you remember JUnit? Well. Junit is a framework: you specify test methods, but **not** how to run them. You don't have to define a main function that calls the test methods. The framework's responsible for managing how to run it (IoC). Let's recall the simple test that we wrote in one of the previous lessons:  
 
 {% highlight java %}
 import org.example.Main;
@@ -32,17 +32,17 @@ The JUnit framework understands that the testAdd method is a test because of the
 
 ### Spring dependencies
 For our examples, we use the following Spring dependencies:  
-1. **Spring boot**: enhance the Spring framework simplifying the creation of applications. Spring Boot manages a server and deploys our application on it in an automatic way.
-2. **Spring web**: this dependency adds Model-View-Controller (MVC) capabilities to Spring, easing the creation of web.
+1. **Spring boot**: enhance the Spring framework simplifying the creation of applications. Spring Boot manages a server and deploys our application on it automatically.
+2. **Spring web**: This dependency adds Model-View-Controller (MVC) capabilities to Spring, easing the creation of web pages.
 
 ## Initialize a Gradle Spring project
 Let's see now how to initialize a Java Spring Application. There are different ways to do that.
 ### Using IntelliJ (Ultimate)
-If you have installed the Ultimate version of IntelliJ IDEA, in the "New Project" view should appear an option named "Spring Initializr": select this, fill out the form, and click "Next". Select the dependencies that you want to install (Spring Boot, Spring Web), then click "Create".
+If you have installed the Ultimate version of IntelliJ IDEA, in the "New Project" view should appear an option named "Spring Initializr": select this, fill out the form, and click "Next". Select the dependencies you want to install (Spring Boot, Spring Web), then click "Create".
 ![Spring intro]({{ site.baseurl }}/images/spring_intro_1.png)
 ![Spring intro]({{ site.baseurl }}/images/spring_intro_2.png)
 ### Using Spring initializr
-<a target="_blank" rel="noopener noreferrer" href="start.spring.io">Here</a>, you can find a nice online tool that helps you create a Spring Project. You just need to fill the form with all the appropriate information, add the dependencies previously mentioned (Spring Boot, Spring Web), and click the "Generate" button. This action will download a .zip file containing your empty Gradle project with Spring dependencies. You can then, after unzipping the .zip, open the project with your desired IDE and start working on it.  
+<a target="_blank" rel="noopener noreferrer" href="start.spring.io">Here</a>, you can find a nice online tool that helps you create a Spring Project. You must fill the form with all the appropriate information, add the previously mentioned dependencies (Spring Boot, Spring Web), and click the "Generate" button. This action will download a .zip file containing your empty Gradle project with Spring dependencies. After unzipping the .zip, you can open the project with your desired IDE and start working on it.  
 ![Spring intro]({{ site.baseurl }}/images/spring_intro_3.png)
 ### By Hand
 You can also initialize a Spring Web application by configuring plugins and dependencies in your build.gradle:
@@ -100,7 +100,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Hello {
 
     @RequestMapping("/") 
-    ßpublic String index() {
+    public String index() {
         return "Greetings from Spring Boot!";
     }
 }
@@ -135,9 +135,8 @@ Now launch:
 > :bootRun
 
 {% endhighlight %}
-This command calls the task bootRun, coming from the Spring Gradle plugin, that launches the Spring application. As you can see from the logs, a <a target="_blank" rel="noopener noreferrer" href="https://tomcat.apache.org/">Tomcat</a> server is initialized on port 8080. This is automatically done by the framework: it isn't necessary to download and configure a Tomcat server! This is transparent from the developer's perspective. If you go on <a target="_blank" rel="noopener noreferrer" href="localhost:8080">localhost:8080</a>, you can see the server in action:
+This command calls the task bootRun, coming from the Spring Gradle plugin, that launches the Spring application. As you can see from the logs, a <a target="_blank" rel="noopener noreferrer" href="https://tomcat.apache.org/">Tomcat</a> server is initialized on port 8080. The framework automatically does this: it isn't necessary to download and configure a Tomcat server! This is transparent from the developer's perspective. If you go on <a target="_blank" rel="noopener noreferrer" href="localhost:8080">localhost:8080</a>, you can see the server in action:
 ![Spring intro]({{ site.baseurl }}/images/spring_intro_4.png)
-In the next lesson, we will see in detail what we have done so far.  
 <div>
 Next: <a href="/SoftwareArchitectures24/spring-1/the-spring-framework">Java Spring - The Spring framework</a>  
 </div>
