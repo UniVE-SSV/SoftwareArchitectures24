@@ -37,6 +37,8 @@ This figure depicts the layered structure of an image: starting from the bottom,
 Then, we will find the Base Image: this represents the starting point of our layered image. Usually, base images are basic minimal Linux distributions, for example, Ubuntu, Redhat, Centos, Alpine, or Debian.  
 
 The next layer is the parent image of our image: simply it adds emacs (a CLI text editor) to our base image, Debian. Our image is built on top of Debian + emacs and provides an Apache HTTP server. The last layer is the read-write layer of the container, and inside of it lives the actual app.  
-<div>
-Next: <a href="/SoftwareArchitectures24/docker/getting-started">Docker - Getting Started</a>
+<div class="lesson-nav">
+    <div>
+    Next: <a href="/SoftwareArchitectures24/docker/getting-started">Docker - Getting Started</a>
+    </div>
 </div>
