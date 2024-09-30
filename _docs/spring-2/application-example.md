@@ -152,9 +152,11 @@ Other operations (search, delete) are left as an exercise. Try to play around!
 OK, this is wonderful. But we want to make our application more user-friendly, for example, presenting a form to the final user that permits adding a student and a more sophisticated view to show our students. We can do it by returning, for example, HTML instead of plain text, using a template engine like <a target="_blank" rel="noopener noreferrer" href="https://www.thymeleaf.org/">Thymeleaf</a>. In the following lessons, we will talk about the HTTP protocol and particularly about the REST architecture, showing how we can build a RESTful application in Spring.
 ## Exercises
 1. Implement the capability to search and delete users.  
-<div>
-Previous: <a href="/SoftwareArchitectures24/spring-2/stereotypes">Spring Sterotypes</a> 
-</div>
-<div>
-Next: <a href="/SoftwareArchitectures24/spring-2/spring-gradle-docker">Java Spring - Spring + Gradle + Docker</a>  
+<div class="lesson-nav">
+    <div>
+    Previous: <a href="/SoftwareArchitectures24/spring-2/stereotypes">Spring Sterotypes</a> 
+    </div>
+    <div>
+    Next: <a href="/SoftwareArchitectures24/spring-2/spring-gradle-docker">Java Spring - Spring + Gradle + Docker</a>  
+    </div>
 </div>

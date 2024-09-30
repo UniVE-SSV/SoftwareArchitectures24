@@ -40,7 +40,9 @@ docker build -t unive/spring/student .
 {% highlight bash %}
 docker run -p 8081:8080 unive/spring/student
 {% endhighlight %}
-![Spring docker]({{ site.baseurl }}/images/spring_docker_1.png)  
-<div>
-Previous: <a href="/SoftwareArchitectures24/spring/application-example">Java Spring - Example of a Spring Application</a>
+![Spring docker]({{ site.baseurl }}/images/spring_docker_1.png)
+<div class="lesson-nav">
+    <div>
+    Previous: <a href="/SoftwareArchitectures24/spring/application-example">Java Spring - Example of a Spring Application</a>
+    </div>
 </div>
