@@ -30,3 +30,8 @@ $full-width-break: $nav-width + ($space * 4) + $content-max-width;
 @import "code";
 @import "tables";
 @import "layout";
+
+// NAV
+.site-title {
+    line-height: 12pt;
+}
