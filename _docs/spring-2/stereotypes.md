@@ -106,6 +106,7 @@ To make code more readable and concise, Spring introduced more specialized annot
 - @DeleteMapping: For HTTP DELETE requests.
 - @PatchMapping: For HTTP PATCH requests.
 You don't need to specify the method in the annotation using these.
+
 ### @Service
 The @Service annotation is another specialization of @Component. It indicates that a class provides some business logic or service. This annotation is often used for the middle layer of an application, where you encapsulate the business rules or logic.
 
