@@ -60,7 +60,7 @@ public class Main {
     }
 }
 {% endhighlight %}
-However, nothing is printed out in the console. This is because we need to configure the log4J library. To do so, create a file in /src/main/resources, named "log4js2.xml", with this content:
+However, nothing is printed out in the console. This is because we need to configure the log4J library. To do so, create a file in /src/main/resources, named "log4j2.xml", with this content:
 {% highlight java %}
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
