@@ -35,3 +35,13 @@ $full-width-break: $nav-width + ($space * 4) + $content-max-width;
 .site-title {
     line-height: 12pt;
 }
+
+@media print {
+    header, .lesson-nav {
+        display: none !important;
+    }
+
+    body {
+        padding: 0px;
+    }
+}
