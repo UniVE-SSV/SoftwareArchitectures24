@@ -137,6 +137,8 @@ Now launch:
 {% endhighlight %}
 This command calls the task bootRun, coming from the Spring Gradle plugin, that launches the Spring application. As you can see from the logs, a <a target="_blank" rel="noopener noreferrer" href="https://tomcat.apache.org/">Tomcat</a> server is initialized on port 8080. The framework automatically does this: it isn't necessary to download and configure a Tomcat server! This is transparent from the developer's perspective. If you go on <a target="_blank" rel="noopener noreferrer" href="localhost:8080">localhost:8080</a>, you can see the server in action:
 ![Spring intro]({{ site.baseurl }}/images/spring_intro_4.png)
-<div>
-Next: <a href="/SoftwareArchitectures24/spring-1/the-spring-framework">Java Spring - The Spring framework</a>  
+<div class="lesson-nav">
+    <div>
+        Next: <a href="/SoftwareArchitectures24/spring-1/the-spring-framework">Java Spring - The Spring framework</a>  
+    </div>
 </div>

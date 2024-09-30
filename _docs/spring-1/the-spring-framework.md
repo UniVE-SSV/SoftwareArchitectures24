@@ -69,9 +69,8 @@ You can also define arguments from the command line:
 {% highlight java %}
 ./gradlew bootRun --args="--server.port=8885"
 {% endhighlight %}
-<div>
-Previous: <a href="/SoftwareArchitectures24/spring-1/introduction">Java Spring - Introduction</a>
+<div class="lesson-nav">
+    <div>
+        Previous: <a href="/SoftwareArchitectures24/spring-1/introduction">Java Spring - Introduction</a>
+    </div>
 </div>
-<!--<div>
-Next: <a href="/SoftwareArchitectures24/spring/application-example">Java Spring - Example of a Spring Application</a>  
-</div>-->
