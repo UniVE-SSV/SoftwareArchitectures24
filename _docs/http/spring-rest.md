@@ -219,5 +219,5 @@ public class Student extends RepresentationModel<Student> {
 ![HTTP Spring]({{ site.baseurl }}/images/http_springrest_5.png)
 And that's it.
 <div>
-Previous: <a href="/SoftwareArchitecture/http/rest">HTTP - REST</a> 
+Previous: <a href="/SoftwareArchitectures24/http/rest">HTTP - REST</a> 
 </div>
