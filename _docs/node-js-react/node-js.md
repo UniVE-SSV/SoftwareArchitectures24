@@ -9,7 +9,7 @@ order: 1
 {:toc}
 ## Introduction
 
-Let's create a NodeJS that interact with our REST API and shows a front-end.  
+Let's create a <a href="https://nodejs.org/en">NodeJS</a> Server that interact with our REST API and shows a front-end.  
 Node.js, often referred to simply as Node, is an open-source, cross-platform runtime environment that allows developers to run JavaScript code on the server side. It enables the creation of scalable and high-performance applications, particularly web servers, that can handle numerous simultaneous connections with high throughput.
 
 ## Install NodeJS
