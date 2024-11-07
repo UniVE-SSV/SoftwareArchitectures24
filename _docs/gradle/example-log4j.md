@@ -60,7 +60,7 @@ public class Main {
     }
 }
 {% endhighlight %}
-However, nothing is printed out in the console. This is because we need to configure the log4J library. To do so, create a file in /src/main/resources, named "log4js2.xml", with this content:
+However, nothing is printed out in the console. This is because we need to configure the log4J library. To do so, create a file in /src/main/resources, named "log4j2.xml", with this content:
 {% highlight java %}
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
@@ -136,6 +136,8 @@ BUILD SUCCESSFUL in 1s
 
 ## Exercises
 1. Define a class Student that has a name, a surname,  a matriculation number, and a list of passed Courses. Then, write a test function that creates a Student and adds some courses to its list. Log the created Student in a log entry in JSON format using the <a target="_blank" rel="noopener noreferrer" href="https://github.com/google/gson">gson</a> library and log4j.
-<div>
-Previous: <a href="/SoftwareArchitectures24/gradle/testing-java-applications">Gradle - Testing Java Application</a>
+<div class="lesson-nav">
+    <div>
+        Previous: <a href="/SoftwareArchitectures24/gradle/testing-java-applications">Gradle - Testing Java Application</a>
+    </div>
 </div>

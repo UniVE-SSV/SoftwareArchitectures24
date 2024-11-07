@@ -107,7 +107,9 @@ A keen eye might have noticed that on the root folder of our project, there are 
 ![Gradle intro]({{ site.baseurl }}/images/gradle_intro_4.png)  
 
 ### A Quick Note About DSL
-Maybe you noticed that during the creation of the project you could choose the Gradle DSL (Domain Specific Language). This goes to specifies the language that you want to use for your Gradle build file (more details on this file later). Kotlin is the preferred choice since it is more readable and offers better compile-time checks since Kotlin is statically typed. However, syntax differences are minimal, so you can choose whatever you prefer.  
-<div>
-Next: <a href="/SoftwareArchitectures24/gradle/build.gradle">Gradle - build.gradle</a>
+Maybe you noticed that during the creation of the project you could choose the Gradle DSL (Domain Specific Language). This goes to specifies the language that you want to use for your Gradle build file (more details on this file later). Kotlin is the preferred choice since it is more readable and offers better compile-time checks since Kotlin is statically typed. However, syntax differences are minimal, so you can choose whatever you prefer. 
+<div class="lesson-nav">
+    <div>
+        Next: <a href="/SoftwareArchitectures24/gradle/build.gradle">Gradle - build.gradle</a>
+    </div>
 </div>
