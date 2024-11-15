@@ -118,3 +118,29 @@ When you clone a Node.js project repository from a version control system like G
 {% highlight bash %}
 npm install
 {% endhighlight %}
+For build our web server, we use Express. Express is a fast, minimalist web framework for Node.js that simplifies the process of building web applications and APIs. It provides a robust set of features and tools that make it easier to manage routes, handle HTTP requests, middleware, and more, all while offering great flexibility and scalability.
+To install express:
+{% highlight bash %}
+➜  nodejs-proj npm install express
+{% endhighlight %}
+### Quickstart
+Let's create a simple GET /students page:
+{% highlight javascript %}
+const express = require('express');
+const axios = require('axios');  // Import Axios for HTTP requests
+
+const app = express();
+
+// Define the /student route
+app.get('/students', async (req, res) => {
+  res.status(200).json({id: 123, name: "Giacomo", surname: "Zanatta"});
+});
+
+// Set up the server to listen on a specific port and hostname
+const hostname = '127.0.0.1';
+const port = 3000;
+
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+{% endhighlight %}
