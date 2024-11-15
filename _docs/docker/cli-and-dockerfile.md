@@ -242,9 +242,11 @@ And run a container from it. Then, open the container's terminal and print out t
 ![Docker images]({{ site.baseurl }}/images/docker_cli_5.png)
 ## Exercises
 1. Create a **Dockerfile** that prints "installing!" when it is installed and prints "running!" each time it is launched.  
-<div>
-Previous: <a href="/SoftwareArchitectures24/docker/getting-started">Docker - Getting Started</a>
-</div>
-<div>
-Next: <a href="/SoftwareArchitectures24/docker/volumes">Docker - Volumes</a>  
+<div class="lesson-nav">
+  <div>
+  Previous: <a href="/SoftwareArchitectures24/docker/getting-started">Docker - Getting Started</a>
+  </div>
+  <div>
+  Next: <a href="/SoftwareArchitectures24/docker/volumes">Docker - Volumes</a>  
+  </div>
 </div>
