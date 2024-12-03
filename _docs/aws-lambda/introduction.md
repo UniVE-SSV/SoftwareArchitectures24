@@ -39,7 +39,7 @@ You should see a page similar to this:
 Take a look at the page. The idea of AWS Lambda is that you write a function (see the example), and AWS provides you with the server that runs that function without worrying about scaling, resource allocations, etc.  
 Clicking the "Create a Function" button takes you to the dashboard:
 ![AWS Intro 6]({{ site.baseurl }}/images/awslambda_intro_6.png)
-Here, you can monitor your functions and inspect some metrics. In the next section, we will explain briefly how the platform works.
+Here, you can monitor your functions and inspect some metrics.
 ## Exercises
 1. Follow the Tutorial:
 ![AWS Intro 7]({{ site.baseurl }}/images/awslambda_intro_7.png)
