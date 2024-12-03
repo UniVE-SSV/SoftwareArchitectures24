@@ -37,11 +37,13 @@ From the container tab, you can stop, pause, restart, and delete containers. If 
 ![Docker Getting Started 8]({{ site.baseurl }}/images/docker_gettingstarted_8.png)
 
 ## Exercises
-1. Try to **install python3** inside the container created on the Getting Started section (**apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python**) and launch a python minimal hello world from the container. 
+1. Try to **install python3** inside the container created on the Getting Started section (```apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python```) and launch a python minimal hello world from the container. 
 2. Experiment with environmental variables. Create a new container from the getting-started image with an environment variable. Install python also on this container (as we said in the previous lessons, the edits we do in a container remain in the container layer - parent image layers are read-only) and try to print out the environment variable from a python script (see <a target="_blank" rel="noopener noreferrer" href="https://docs.python.org/3/library/os.html">the os python standard module</a>).  
-<div>
-Previous: <a href="/SoftwareArchitectures24/docker/introduction">Docker - Introduction</a>
-</div>
-<div>
-Next: <a href="/SoftwareArchitectures24/docker/cli-and-dockerfile">Docker - CLI and Dockerfile</a>  
+<div class="lesson-nav">
+    <div>
+    Previous: <a href="/SoftwareArchitectures24/docker/introduction">Docker - Introduction</a>
+    </div>
+    <div>
+    Next: <a href="/SoftwareArchitectures24/docker/cli-and-dockerfile">Docker - CLI and Dockerfile</a>  
+    </div>
 </div>

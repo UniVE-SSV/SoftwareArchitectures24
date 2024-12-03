@@ -4,8 +4,8 @@ sitemap: false
 ---
 
 $baseurl: "{{ site.baseurl }}";
-$body-background-color: #2B2E31;
-
+//$body-background-color: #2B2E31;
+$body-background-color: #fff;
 $content-max-width: 800px;
 $content-color: #222;
 $content-background-color: #fff;
@@ -30,3 +30,18 @@ $full-width-break: $nav-width + ($space * 4) + $content-max-width;
 @import "code";
 @import "tables";
 @import "layout";
+
+// NAV
+.site-title {
+    line-height: 12pt;
+}
+
+@media print {
+    header, .lesson-nav {
+        display: none !important;
+    }
+
+    body {
+        padding: 0px;
+    }
+}
